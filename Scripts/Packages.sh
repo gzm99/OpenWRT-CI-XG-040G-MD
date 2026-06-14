@@ -80,6 +80,8 @@ UPDATE_PACKAGE "qmodem" "FUjr/QModem" "main"
 UPDATE_PACKAGE "viking" "VIKINGYFY/packages" "main" "" "gecoosac luci-app-timewol luci-app-wolplus"
 #UPDATE_PACKAGE "vnt" "lmq8267/luci-app-vnt" "main"
 UPDATE_PACKAGE "luci-app-airoha-npu" "bingoguo93/luci-app-airoha-npu" "main"
+UPDATE_PACKAGE "vmlinux-btf" "sbwml/package_kernel_vmlinux-btf" "main"
+UPDATE_PACKAGE "openwrt-daede" "kenzok8/openwrt-daede" "main" "" "dae daed luci-app-dae luci-app-daed luci-app-daede"
 
 #更新软件包版本
 UPDATE_VERSION() {
