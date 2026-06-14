@@ -41,6 +41,12 @@ echo "CONFIG_LUCI_LANG_zh_Hans=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-theme-$WRT_THEME=y" >> ./.config
 echo "CONFIG_PACKAGE_luci-app-$WRT_THEME-config=y" >> ./.config
 
+# Linux 6.18.34 may ask this as a new ARM64 option during syncconfig.
+KERNEL_CONFIG="./target/linux/airoha/an7581/config-6.18"
+if [ -f "$KERNEL_CONFIG" ] && ! grep -q "^# CONFIG_ARM64_BRBE is not set" "$KERNEL_CONFIG"; then
+	echo "# CONFIG_ARM64_BRBE is not set" >> "$KERNEL_CONFIG"
+fi
+
 #引入私有扩展配置
 if [ -f "$GITHUB_WORKSPACE/Config/PRIVATE.txt" ]; then
 	echo "Applying private configurations from PRIVATE.txt..."
